@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Jérémy Barbay's webpage</title>
+<!-- 2014-06-13 Fri 12:26 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Jérémy Barbay" />
+<meta  name="keywords" content="Adaptive Algorithms, Compressed Data Structures, Pedagogy" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+
+<script type="text/javascript" src="http://orgmode.org/org-info.js">
+/**
+ *
+ * @source: http://orgmode.org/org-info.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in http://orgmode.org/org-info.js.
+ *
+ * Copyright (C) 2012-2013 Free Software Foundation, Inc.
+ *
+ *
+ * The JavaScript code in this tag is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License (GNU GPL) as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option)
+ * any later version.  The code is distributed WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you
+ * may distribute non-source (e.g., minimized or compacted) forms of
+ * that code without the copy of the GNU GPL normally required by
+ * section 4, provided you include this license notice and a URL
+ * through which recipients can access the Corresponding Source.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in http://orgmode.org/org-info.js.
+ *
+ */
+</script>
+
+<script type="text/javascript">
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "2");
+org_html_manager.set("LINK_HOME", "index.html");
+org_html_manager.set("LINK_UP", "");
+org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "0");
+org_html_manager.set("VIEW", "info");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*///-->
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href=""> UP </a>
+ |
+ <a accesskey="H" href="index.html"> HOME </a>
+</div><div id="content">
+<h1 class="title">Jérémy Barbay's webpage</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Contact </a></li>
+<li><a href="#sec-2">2. Research </a></li>
+<li><a href="#sec-3">3. Publications </a></li>
+<li><a href="#sec-4">4. Courses </a></li>
+<li><a href="#sec-5">5. Supervision </a></li>
+<li><a href="#sec-6">6. Funding </a></li>
+<li><a href="#sec-7">7. Service </a></li>
+<li><a href="#sec-8">8. Experience </a></li>
+<li><a href="#sec-9">9. Vita </a></li>
+</ul>
+</div>
+</div>
+
+<div class="figure">
+<p><img src="jeremyWithCarricatureOnGlass.jpg" alt="jeremyWithCarricatureOnGlass.jpg" />
+</p>
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Contact <a id="Contact"></a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+I am assistant professor in the <a href="//dcc.uchile.cl/">Department of Computer Science (DCC)</a> of the <a href="http://www.fcfm.cl/">Faculty of Physical and Mathematical Sciences</a> of the  <a href="http://www.uchile.cl/">University of Chile</a> in Santiago, Chile. 
+</p>
+
+<ul class="org-ul">
+<li>Physical Mail address:
+<div class="org-src-container">
+
+<pre class="src src-text">J&#233;r&#233;my Barbay   (a la atenci&#243;n de Francia Ormena)
+Oficina 303, tercer Piso
+Departamento de Ciencias de la Computacion, Universidad de Chile
+Beauchef 851,
+C.P. 8370459 Santiago, Chile
+</pre>
+</div>
+</li>
+<li>Phone coordinates: (GMT-3 Oct-Feb, GMT-4 Mar-Sep)
+<ul class="org-ul">
+<li>Secretary (<a href="mailto:francia@dcc.uchile.cl">Francia Ormena</a>): 56-2-2978-4365
+<ul class="org-ul">
+<li>She can redirect you to my office in case of emergency.
+</li>
+<li>If there is no emergency, I prefer you to email me.
+</li>
+</ul>
+</li>
+<li>Communication (<a href="mailto:comunicaciones@dcc.uchile.cl">Ana Martinez</a>): 56-2-2978 0657
+</li>
+<li>Direccion (<a href="mailto:magna@dcc.uchile.cl">Magna Bornand</a>): 56-2-2978-0652
+</li>
+<li>Fax: 56-2-2689-5531
+</li>
+</ul>
+</li>
+<li>email:  <a href="mailto:jbarbay@dcc.uchile.cl">mailto:jbarbay@dcc.uchile.cl</a>
+</li>
+<li>web:    <a href="http://www.dcc.uchile.cl/~jbarbay">http://www.dcc.uchile.cl/~jbarbay</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Research <a id="Research"></a></h2>
+<div class="outline-text-2" id="text-2">
+<p>
+In the field of Theoretical Computer Science, I am interested in refining the worst case analysis over instances of fixed size n by adding more parameters to it, in order to intuitively measure the "difficulty" of the instance. The main motivation of this technique is that the gap between practical cases (real world) and the worst case (over instances of same size as practical ones) becomes potentially larger on <b>massive data</b>: refining the analysis by adding more parameters to it allows to reduce this gap back to reasonable values, by better understanding the particularities of practical instances. Albeit a theoretician by formation, I do implement and evaluate experimentally some of my theoretical results, either in collaboration with students or by myself.
+</p>
+
+<p>
+This concept applies both to the analysis of the computational cost of algorithms (leading to <b>Adaptive Algorithms</b> and Parameterized Complexity) and of the space usage of data structures (leading to <b>Compressed Data Structures</b> and <b>Compressed Indices</b>), and is pushed to its extreme with the concept of <b>Instance Optimality</b>, a property insuring the asymptotical optimality of an algorithmic construct over each single instance. Whereas the concepts of adaptive algorithms, parameterized complexity and compressed data structure were defined well before me, I was able to clarify their relations and introduced new useful concepts.
+</p>
+
+<p>
+See my (partial) <a href="research.html">research notes</a> for more details.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Publications <a id="Publications"></a></h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Not completely correlated with <a href="http://scholar.google.cl/citations?user=x7L1W0rvHwsC">Google Scholar</a>'s selection, I believe that my <b>five most impacting publications</b> are the following:
+</p>
+
+<ol class="org-ol">
+<li>In the article "<i>Efficient Fully Compressed Sequence Representations</i>" <a href="publications.html#ALGO2014">ALGO2014</a>, in collaboration with Francisco Claude, Travis Gagie, Gonzalo Navarro and Yakov Nekrich, we introduced the first Compressed Index achieving space within o(n H<sub>k</sub>) + O(n) instead of merely within o(n lg &sigma;): previous indices were using space within o(n lg &sigma;) which was sometime dominating the n H<sub>k</sub> bits used to encoded the compressed data.
+</li>
+
+<li>In the article "<i>On Compressing Permutations And Adaptive Sorting</i>" <a href="publications.html#TCS2013">TCS2013</a>, in collaboration with Gonzalo Navarro, we connected formally the concepts of compression (of permutations) and adaptive algorithms (for sorting) in the comparison model, by showing that for various adaptive sorting algorithm (in the comparison model), there is a compressed data structure for permutations which supports the operators applying this permutation and its inverse in less time than required to decomporess the permutation.
+</li>
+
+<li>In the article "<i>Compact Binary Relation Representations With Rich Functionality</i>" <a href="publications.html#IC2013">IC2013</a>, in collaboration with Francisco Claude and Gonzalo Navarro, we unified the various Compressed Data Structures for Binary Relations previously known in a single common theoretical interface, and explored in practice various implementation alternatives.
+</li>
+
+<li>In the article "<i>Succinct Indexes For Strings And Binary Relations</i>" <a href="publications.html#TALG2011">TALG2011</a>, in collaboration with Meng He, Ian J. Munro, and Srinivasa Rao, we introduced formally the concept of <b>Succinct Indexes</b>: some succinct data structures previously introduced were indexes without claiming it, nor the advantages of indexes such as their modularity (two succinct indexes supporting distinct operators can be combined into a single succinct index which supports the union of their operator sets, which is not necessarily true of two succinct data structures) or their applications to generate compressed data structures.
+</li>
+
+<li>In the article  "<i>Instance Optimal Geometric Algorithms</i>" <a href="publications.html#FOCS2009">FOCS2009</a>, in collaboration with Peyman Afshani and Timothy Chan, we gave the first applications of (input order oblivious) <b>Instance Optimality</b> to <b>Computational Geometry</b>, a fundamental result which generalize to many other problems in computational geometry. (The concept of Instance Optimality had been previously introduced by Fagin et al. on queries to databases.)
+</li>
+</ol>
+
+
+<p>
+See my <a href="publications.html">publications</a> page for the rest of my publications in reversed chronological order: you can press "C" on it to see the publications sorted by categories (e.g. Chapters, Journals and Conferences), research area (e.g. Computational Geometry, Evolution Theory, etc&#x2026;) or type of work (Theory or Simulations).
+</p>
+
+<p>
+See <a href="http://scholar.google.cl/citations?user=x7L1W0rvHwsC">Google Scholar</a> for some statistics on my publications, <a href="http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/b/Barbay:J=eacute=r=eacute=my.html">dblp</a> for some other lists of my publications and <a href="http://arxiv.org/find/all/1/all:+AND+jeremy+barbay/0/1/0/all/0/1">Arxiv</a> for some drafts.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Courses <a id="Courses"></a></h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Ever since my doctorate I have been creating new teaching material and tools, and researching new educational techniques.  The reaction from students to such innovations is often enthusiastic (e.g. about the increased creativity and interactivity) and sometime confrontational (e.g. because it does not follow the pattern to which they are accustomed, and requires more independent work than usual). My goal is to enable them to learn in either case.
+</p>
+
+<p>
+The course designs of which I am the most proud are the following:
+</p>
+
+<ol class="org-ol">
+<li>The undergraduate research course "<b>Fine Analysis</b> of Algorithms and Data Structures" (translated from "Analisis Fino de Algoritmos y Estructuras de Datos"), composed of two phases where each student reads 8 research articles superficially; studies, presents and summarizes one small set of articles; and either works on a mini research theme or develops some mini graphical pedagogical material, and evaluates and criticizes the work of other students. It mostly features advanced variants of algorithms well known to undergraduate, in order to force them to refine their understanding of material already studied (e.g. Sequential and Binary Search refined into Doubling Search, Unary and Binary codes refined into Gamma and Delta Codes, Merge Sort refined into "adaptive Merge Sort", etc&#x2026;). Students say in the anonymous teaching evaluation that this course is more work than other courses, but that they still liked it a lot.
+</li>
+
+<li>The module <b>Alice</b> of the second year undergraduate course <a href="http://taller-proyecto.dcc.uchile.cl:8091/modulo.html">EI2001 Taller de Proyectos</a>, where students design and program pedagogical 3d animations (five over the course of one semester) using the software Alice from CMU, in groups of two students: the hypothesis is that "Teaching is Learning", and that by reflecting and getting feedback on teaching material that they learn in the previous year, the students will deepen their understanding of it, while learning useful skills from software engineering and pedagogy. Teaching evaluations are very positive.
+</li>
+
+<li>The course "<b>Android</b> - Programming Mobile Devices" was created to support students of the University of Chile participating to the <b>Competition of Mobile/Android development</b> (<a href="http://www.tuapp.org/">TUApp</a>) which I have been co-organizing with the company <a href="http://www.cursor.cl">Cursor</a> and professors from other universities since 2009. Aimed at Engineering students (including students not majoring in computer science), it was designed for 30 students and received 140 inscriptions, which forced me to extend it to three courses of 30 students each (summing to 120). In total, 90 students finished the course with amazing applications over the theme of "education".
+</li>
+</ol>
+
+<p>
+See my <a href="courses.html">Courses</a> webpage for more detailed information, and in particular the list of calendar of courses I taught in the past.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Supervision <a id="Supervision"></a></h2>
+<div class="outline-text-2" id="text-5">
+<p>
+I like a lot working with students (even when I am not directing them), and I am thoroughly reviewing the thesis that are assigned to me as a referee (some say I am picky), which I duly annotate in various colors using <a href="http://en.wikipedia.org/wiki/Xournal">Xournal</a> on a Tablet PC.  I am currently supervising the following students:
+</p>
+
+<dl class="org-dl">
+<dt> Carlos Ochoa (PhD, 2013-now) "<i>Adaptive Algorithms on Convex Hull, Voronoi Diagrams and Delaunay Triangulations</i>" </dt><dd>Carlos is working on the adaptive computation of Delaunay Triangulations, taking advantage of the order of the input (I proved in the past [FOCS2009] that adaptive computation independent of the input order was impossible in 2 or 3 dimensions); on the implied compressed data structure for this triangulation; and on engineering another adaptive algorithm for merging Delaunay triangulations  (cosupervision with <a href="http://www.decom-uv.cl/pperez/?p=175">Pablo Pérez-Lantero</a>).
+</dd>
+
+<dt> Javiel Rojas (PhD, 2013-now) "<i>Adaptive Algorithms for computing Klee's measure in High Dimension</i>" </dt><dd>Javiel is working on the adaptive computation of the Klee's measure of a set of rectangles in high dimensions. He is focusing first on engineering algorithms which take advantage of the degeneracy of the input, something which was not done before in computational geometry, and then on finer measures of adaptivity (cosupervision with <a href="http://www.decom-uv.cl/pperez/?p=175">Pablo Pérez-Lantero</a>).
+</dd>
+</dl>
+
+<p>
+I like to work with students on topics where I bring the techniques (typically, adaptive analysis or compressed data structures) and they (or a co-advisor) bring the problems from a field I am not familiar with. I pay students to make them accountable. I require students who wish to work with me to write their own proposal after we find an intersection between our interests: the idea is that this is <b>their</b> project, and that <b>they</b> must be the ones convinced that it can be done, so that they are more motivated to resolve problems on the paths to success than if the success is based on my own conviction that the project is doable.  During the project, we meet weekly to assess the progress made and re-evaluate the objectives of the project if necessary.  I require the students to start their report at the begining of the internship and to submit updates in pdf regularly during the project.
+</p>
+
+<p>
+For more details, see my <a href="Supervision/supervisedStudents.html">past supervisions</a> and my <a href="supervision.html">supervision</a> page for informations and tutorials for current and future supervised students.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Funding <a id="Funding"></a></h2>
+<div class="outline-text-2" id="text-6">
+<p>
+I combine several source of fundings, which cover various research topics and activities.
+</p>
+
+<ul class="org-ul">
+<li>I direct the project <a href="funding.html#FONDECYT2012">Fondecyt Regular 1120054 "Compressed Data Structures and Compressability Measures"</a>, funded by <a href="http://www.conicyt.cl/">Conicyt</a>. This finances my research on compressed data structures, by paying for my equipment, my travels and my students.
+</li>
+
+<li>I participate in the project <a href="funding.html#AGCO">Millenium Nucleus ICM/FIC P10-024F</a>, funded by <a href="http://www.conicyt.cl/">Conicyt</a>. This is a group project on the processing of network data, and massive data sets in particular. It finances our seminars, summer and winter schools, and some outreach activites in which I participate.
+</li>
+
+<li>I dispose of a <a href="funding.html#FII">Fundo de Incentivo a la Investigación (FII)</a> from the <a href="//dcc.uchile.cl/">Department of Computer Science (DCC)</a>.  I use it to pay undergraduate students, furniture and exploratory research not covered by the other projects.
+</li>
+
+<li>I manage a <a href="funding.html#FVI">Fundo de Visitas a la Investigación (FVI)</a> from the <a href="//dcc.uchile.cl/">Department of Computer Science (DCC)</a>, which subventions the visit of one international guest per year. The conditions to be eligible are that the guest should stay at least 20 work days, have a doctorate, and give a presentation about his work while visiting. The money is generally enough to pay either for an international trip to Chile or from the hotel: I sometime manage to pay the other half from another project, or the visitor is paying his half. Those restrictions sometimes make it harder to find candidates, so <a href="mailto:jbarbay@dcc.uchile.cl">contact me</a> if you are interested in such a visit!
+</li>
+</ul>
+
+<p>
+See my <a href="funding.html">Funding</a> page for more details, and in particular for a list of publications acknowledging each source of funding.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Service <a id="Service"></a></h2>
+<div class="outline-text-2" id="text-7">
+<p>
+I fulfill services mostly in the community of Theoretical Computer Science and in the university where I work, but I also participate in other communities related to pedagogy, cryptography and databases:
+</p>
+<ul class="org-ul">
+<li>in the community of <b>Theoretical Computer Science</b>, I mostly serve as
+<ul class="org-ul">
+<li>Organizer of <a href="services.html#Events">Events</a> such as Workshops and Summer/Winter schools,
+</li>
+<li>Speaker at <a href="services.html#Schools">Summer/Winter Schools</a>  for graduate students and researchers,
+</li>
+<li>Member of <a href="services.html#PC">Program Committees</a>,
+</li>
+<li>Referee for <a href="services.html#Journals">journals</a> and <a href="services.html#Conferences">conferences</a>; while
+</li>
+</ul>
+</li>
+<li>in the universities where I worked, I help in <b>outreach activities</b> such as
+<ul class="org-ul">
+<li>animating the stand at the annual fair for high-school students, showing pedagogical game developped by my students, or
+</li>
+<li>teaching courses at a summer school for high school teachers;
+</li>
+</ul>
+</li>
+<li>in the field of <b>Pedagogy</b> I
+<ul class="org-ul">
+<li>co-organized some events (<a href="http://ale2011.ing.uchile.cl/">ALE2011</a>, Mecesup 2011), and
+</li>
+<li>served as a <a href="services.html#Conferences">referee</a> for research articles, engineering thesis; and
+</li>
+</ul>
+</li>
+<li>in the fields of <b>DataBases</b>, <b>Cryptography</b>, <b>Human Computer Interaction</b>, and <b>Mechanism Design</b> I served as a <a href="services.html#Conferences">referee</a> for research articles, Phd, master and engineering's thesis.
+</li>
+</ul>
+
+<p>
+See my <a href="services.html">Services</a> page for more detailed information.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Experience <a id="Experience"></a></h2>
+<div class="outline-text-2" id="text-8">
+<p>
+I hold the following diploma and positions:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="right" />
+
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="right">Period</th>
+<th scope="col" class="left">Title</th>
+<th scope="col" class="left">Institution</th>
+<th scope="col" class="left">Country</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="right">2008-now</td>
+<td class="left">Assistant Professor</td>
+<td class="left">Universidad de Chile</td>
+<td class="left">Chile</td>
+</tr>
+
+<tr>
+<td class="right">2004-2008</td>
+<td class="left">Assistant Professor</td>
+<td class="left">University of Waterloo</td>
+<td class="left">Canada</td>
+</tr>
+
+<tr>
+<td class="right">2002-2004</td>
+<td class="left">PostDoctoral Fellow</td>
+<td class="left">University of British Columbia</td>
+<td class="left">Canada</td>
+</tr>
+
+<tr>
+<td class="right">1998-2002</td>
+<td class="left">Ph.D. in Computer Science</td>
+<td class="left">Université d'Orsay</td>
+<td class="left">France</td>
+</tr>
+
+<tr>
+<td class="right">1997-1998</td>
+<td class="left">M.Sc. (D.E.A.) in Computer Science</td>
+<td class="left">Université d'Orsay</td>
+<td class="left">France</td>
+</tr>
+
+<tr>
+<td class="right">1997</td>
+<td class="left">B.Sc. (Maitrise) in Mathematics</td>
+<td class="left">Université de Rouen</td>
+<td class="left">France</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Vita <a id="Vita"></a></h2>
+<div class="outline-text-2" id="text-9">
+<p>
+I was born in France, in June 1976. I received a Bachelor of Science degree in Mathematics in 1997 in Rouen, a Master degree in 1998 and a Philosophy Doctorate in 2002, both in Computer Science at the <a href="https://www.lri.fr/">Laboratoire de Recherche en Informatique</a> of the <a href="http://www.u-psud.fr/">University of Orsay</a>, under the supervision of <a href="http://www.di.ens.fr/ClaireMathieu.html">Claire Mathieu</a>.  I was a posdoctoral fellow at the <a href="https://www.cs.ubc.ca/">department of Computer Science</a> of the <a href="https://www.ubc.ca/">University of British Columbia</a> until 2004 and an assistant professor at the <a href="https://cs.uwaterloo.ca/">Cheriton School of Computer Science</a> of the <a href="https://uwaterloo.ca/">University of Waterloo</a> until 2008. I am now an assistant professor at the <a href="http://dcc.uchile.cl/">department of Computer Science</a> of the <a href="http://www.uchile.cl/">University of Chile</a> in Santiago, Chile. So far I have lived in France, United States, Canada and Chile.
+</p>
+
+<p>
+My main <a href="research.html">research</a> is about the analysis of algorithms and data-structures on finer classes of instances than those merely defined by their size, which yields the concepts of <b>adaptive (analysis of) algorithms</b>, instance optimality, output sensitive and parameterized complexity, compressed data structures and indexes, and of formal measures of compressibility.  My work has contributed to clarify the relations between those topics and has introduced a few useful concepts, such as the direct relation between permutation compression and adaptive sorting (<a href="publications.html#*2013,%20TCS,%20"/On%20Compressing%20Permutations%20and%20Adaptive%20Sorting/",%20J%C3%A9r%C3%A9my%20Barbay,%20Gonzalo%20Navarro">TCS2013</a>); the first Compressed Index achieving space within o(n H<sub>k</sub>) + O(n) instead of merely within o(n lg &sigma;) (<a href="publications.html#*2014,%20ALGO,%20"/Efficient%20Fully%20Compressed%20Sequence%20Representations/",%20J%C3%A9r%C3%A9my%20Barbay,%20Francisco%20Claude,%20Travis%20Gagie,%20Gonzalo%20Navarro,%20Yakov%20Nekrich">ALGO2014</a>); <b>Succinct Indexes</b> (<a href="publications.html#*2011,%20TALG,%20"/Succinct%20indexes%20for%20strings,%20binary%20relations%20and%20multilabeled%20trees/",%20J%C3%A9r%C3%A9my%20Barbay,%20Meng%20He,%20J.%20Ian%20Munro,%20Srinivasa%20Rao%20Satti">TALG2011</a>); and (input order oblivious) <b>Instance Optimality</b> in <b>Computational Geometry</b> (<a href="publications.html#*2009,%20FOCS,%20"/Instance-Optimal%20Geometric%20Algorithms/",%20Peyman%20Afshani,%20J%C3%A9r%C3%A9my%20Barbay,%20Timothy%20M.%20Chan">FOCS2009</a>).  Albeit a theoretician by formation, I did implement and experimentally evaluate some of my theoretical results, either in collaboration with students or on my own (<i>JEA2009</i>,<i>WEA2006</i>).
+</p>
+
+<p>
+I love to help people to learn.
+I have <a href="Supervision/supervisedStudents.html#Direction">directed</a> various undergraduate and graduate students, in both theoretical and practical projects, and supervised various initiatives (creation of learner-centered courses, flipped classrooms, organization of programming competitions) in the various institutions where I have worked. 
+I experiment with new pedagogical techniques as part of my teaching (e.g. organisation of <a href="http://www.tuapp.org/">yearly android programming contests</a>, creation of programming <a href="http://taller-proyecto.dcc.uchile.cl">Project Oriented</a> courses, usage of concept questions in more traditional courses, course where university students teach <a href="http://www.institutodelasordera.cl">deaf high-school students</a>) and designs tools to help instructors to share and evaluate collectively teaching material over time (e.g. database of solved problems, designed in 2006 at the University of Waterloo, still in use in 2012), and between institutions (<a href="https://github.com/jyby/repositorium/">https://github.com/jyby/repositorium/</a>).
+</p>
+
+<p>
+I love to learn.  
+I speak native French, I am fluent in English and in Spanish, and I have studied (at the beginner's levels) various other languages for fun, such as Russian, Romanian and Farsi. 
+I practice sport, regularly learning new ones (e.g. running, biking, swimming, roller blading, stilts, unicycling, juggling and occasionally blowing fire).  
+I learned computer programming on my own (in <a href="http://en.wikipedia.org/wiki/GFA_BASIC">GFA Basic</a> on <a href="http://en.wikipedia.org/wiki/Atari_ST">Atari ST</a>) in 1990 at the age of 14: my first project was a "Tron" game with scrolling windows for four players in text mode. My second project was a program to enter the house expenses, sum them up and print the whole in a achivable form. My last project on this machine was a maze generator and game for the kindergarten where my mother taught: it was used in class for some 6 years after conception. I learned the <a href="http://en.wikipedia.org/wiki/The_C_Programming_Language">C Programming Language</a> from Kernighan and Ritchie's book in 1993 when I got to the University: my first programming course was two years later, in <a href="http://en.wikipedia.org/wiki/Turbo_Pascal">Turbo Pascal</a>: I then read a book about it and did my project in <a href="http://en.wikipedia.org/wiki/Pascal_(programming_language)#Object_Pascal.2C_Turbo_Pascal">Object Turbo Pascal</a>. I learned <a href="http://en.wikipedia.org/wiki/C++">C++</a> during my master in 1997 (programming Genetic Algorithms). I learned and taught <a href="http://en.wikipedia.org/wiki/Caml">CAML</a>, <a href="http://en.wikipedia.org/wiki/OCAML">OCAML</a>, <a href="http://en.wikipedia.org/wiki/Java">Java</a>, <a href="http://en.wikipedia.org/wiki/Test_driven_development">test-driven development</a> as a Teaching Assistant from 1998 to 2002, and learned shell script, <a href="http://en.wikipedia.org/wiki/HTML">HTML</a> and <a href="http://en.wikipedia.org/wiki/Php">PHP</a> on my own. I learned <a href="http://en.wikipedia.org/wiki/Perl">Perl</a> during my postdoctoral fellowship at UBC in 2003. I learned <a href="http://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> in 2006 as an assistant professor at the university of Waterloo, and programmed a simulator of intersection algorithms in C++. I learned (and partially taught) <a href="http://en.wikipedia.org/wiki/Agile_development">agile development</a> between 2010 and 2012 from my students in Software Engineering. I am learning <a href="http://en.wikipedia.org/wiki/Elisp">ELISP</a> on my own in 2013 and 2014.
+</p>
+
+<p>
+I love to create.
+I play and compose music (e.g. clarinette, xaphoon, bandoneon, piano,&#x2026; ).
+I make some craft (drawing, etching glasses, copper and wood).
+I make some good (and artistic) cooking, with a preference for desserts.
+I love to travel and to take pictures of the people I see there, more than the places themselves.
+</p>
+
+<p>
+I was kicked out of kindergarten into primary school one year before the normal time because of lack of space, and kept the pace ever since, being usually one to three years younger than my classmates: I was the second youngest alumni to get a PhD from the <a href="http://www.u-psud.fr">University of Orsay</a>.
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>
